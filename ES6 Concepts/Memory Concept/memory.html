@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Concept</title>
+</head>
+
+<body>
+
+    <h3>
+        Stack and Heap Memory
+        <p>All Primtive Types are stored in Stack Memory and non Primitive Types are stored in Heap Memory</p>
+    </h3>
+
+    <script>
+        // In stack there is copy of myYoutubechannel that is anotheryoutubechannel no change is made in original myYoutubechannel
+
+        let myYoutubechannel = "CodeWithSahil"
+        let anotherYoutubechannel = myYoutubechannel
+
+        anotherYoutubechannel = "CodewithHarry"
+
+        console.log(myYoutubechannel)
+        console.log(anotherYoutubechannel)
+
+        // In heap memory there is no copy of myYoutubechannel that is anotherYoutubechannel any change made in anotherYoutubechannel will also change the original myYoutubechannel
+
+        let userOne = {
+            email: "sahil@google.com",
+            upi: "abc@ybl"
+        }
+
+        let userTwo = userOne  // means yhaan pe userTwo mein userOne ka address store hua hai and jo bhi change userTwo mein hoga wo userOne mein bhi hoga
+
+        userTwo.email = "user@gmail.com"
+
+        console.log(userOne.email)
+        console.log(userTwo.email)
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
