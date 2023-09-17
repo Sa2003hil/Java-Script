@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const marvel_heros = ["thor", "Ironman", "spiderman"]
+        const dc_heros = ["superman", "batman", "flash"]
+
+
+        marvel_heros.push(dc_heros)
+        console.log(marvel_heros) // in this case output will be ["thor", "Ironman", "spiderman", ["superman", "batman", "flash"]] because push will add the array as a single element
+
+
+
+        // another method to add the array as a single element is using concat method
+
+        const allheros = marvel_heros.concat(dc_heros)
+        console.log(allheros) // in this case output will be ["thor", "Ironman", "spiderman", "superman", "batman", "flash"] because concat will add the array as a single element
+
+        // another method to add the array as a single element is using spread operator ...spread operator is used to spread the array elements as a single element 
+
+        const allheros2 = [...marvel_heros, ...dc_heros]
+        console.log(allheros2)
+    </script>
+
+</body>
+
+</html>
