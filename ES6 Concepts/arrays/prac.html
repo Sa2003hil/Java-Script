@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // question : while the input is not equal to 0 input the values
+        let arr = [31, 22, 43, 12];
+        let a;
+        do {
+            a = prompt("Enter the number :");
+            a = Number.parseInt(a);
+            arr.push(a);
+            // console.log(arr);
+        }
+        while (a != 0)
+
+        document.write(arr);
+
+        // question : by using filter func find out the numbers in an array divisble by 10
+        let arr2 = [310, 20, 30, 12];
+        let n = arr2.filter((ele) => {
+            return ele % 10 == 0;
+        })
+
+        console.log(n);
+
+
+
+        // question : find the factorial of numbes
+
+        let nums = [1, 2, 3, 4, 5, 6];
+
+        let ans = nums.reduce((x1, x2) => {
+            return x1 * x2;
+        })
+
+
+        console.log(ans);
+    </script>
+
+</body>
+
+</html>

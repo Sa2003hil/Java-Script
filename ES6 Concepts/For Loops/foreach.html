@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Each Loop</title>
+</head>
+
+<body>
+    <script>
+
+        // The forEach() method is available for arrays and executes a provided function once for each element in the array.
+        let arr = [2, 3, 4, 5];
+        arr.forEach((element) => {
+            console.log(element * element)
+        })
+
+        // array from method is used to convert a string into an array
+
+        let str = "Hello World";
+        let arrr = Array.from(str);
+        console.log(arrr);  // [ 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd' ]   
+
+
+
+        // for of loop is simplest way to iterate over an array
+
+        for (let element of arr) {
+            console.log(element)
+        }
+
+
+
+        // for each full syntax
+
+        const aarr1 = [2, 3, 4, 5];
+
+        aarr1.forEach((element, index, array) => {
+            console.log(element, index, array)
+        })
+        // 2 0 [ 2, 3, 4, 5 ]
+        // 3 1 [ 2, 3, 4, 5 ]
+        // 4 2 [ 2, 3, 4, 5 ]
+        // 5 3 [ 2, 3, 4, 5 ]   
+
+
+        /*
+
+        important:-
+
+        diffrece between for each and map function is that for each function to return element  int the existing array but map function returns a new array
+        
+        */
+
+        // MAP : function is used to iterate over an array and return a new array
+
+        let arr3 = [1, 2, 3, 4];
+
+        let a = arr3.map((value, index, arr3) => {
+            value += 1
+            console.log(value, index, arr3)
+        })
+
+
+
+        // FILTER : Let's say you're building an e-commerce website and you want to display only products that are on sale:
+
+        const products = [
+            { name: "Product 1", onSale: true, price: 20 },
+            { name: "Product 2", onSale: false, price: 30 },
+            // ...
+        ];
+
+        const productsOnSale = products.filter(product => product.onSale);
+        // Result: [{ name: "Product 1", onSale: true, price: 20 }, ...]
+
+        /*
+        You can use the filter function to extract the products that are currently on sale and display them to users.
+        */
+
+
+
+        // REDUCE
+        // Imagine you're creating a budget tracking app, and you want to calculate the total expenses from an array of expense items:
+
+
+        const expenses = [
+            { category: "Food", amount: 50 },
+            { category: "Transportation", amount: 30 },
+            // ...
+        ];
+
+        const totalExpenses = expenses.reduce((total, expense) => total + expense.amount, 0);
+// Result: 80
+
+
+
+
+    </script>
+
+</body>
+
+</html>

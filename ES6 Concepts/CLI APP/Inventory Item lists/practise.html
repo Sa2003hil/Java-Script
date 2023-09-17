@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory item listst</title>
+</head>
+
+<body>
+    <h1>Inventory Management System</h1>
+    <input type="text" id="productName" placeholder="Product Name">
+    <input type="number" id="productQuantity" placeholder="Product Quantity">
+    <input type="number" id="productPrice" placeholder="Price">
+
+    <button id="addProduct"> Add Product</button>
+
+
+    <h2>Invetory List</h2>
+    <ul id="inventoryList"></ul>
+
+    <script>
+
+        const inventory = [
+            { id: 1, name: 'Product A', quantity: 10, price: 20 },
+            { id: 2, name: 'Product B', quantity: 10, price: 20 },
+            { id: 3, name: 'Product C', quantity: 10, price: 20 },
+            { id: 4, name: 'Product D', quantity: 10, price: 20 },
+        ];
+
+        const inventoryList = document.getElementById('inventoryList');
+        const productNameInput = document.getElementById('productName');
+        const productQuantityInput = document.getElementById('productQuantity');
+        const productPriceInput = document.getElementById('productPrice');
+        const addProductButton = document.getElementById('addProduct');
+
+        function displayInventory(products) {
+            inventoryList.innerHTML = products
+                .map(product => `<li>${product.name} - Quantity: ${product.quantity}, Price: $${product.price}</li>`)
+                .join('');
+        }
+        displayInventory(inventory);
+
+
+    </script>
+
+
+</body>
+
+</html>

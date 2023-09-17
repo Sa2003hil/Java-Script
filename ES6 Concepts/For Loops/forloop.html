@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop</title>
+</head>
+
+<body>
+    <script>
+        let marks = {
+            harry: 93,
+            sahil: 92,
+            sam: 99,
+            aditi: 89
+
+        }
+
+
+        for (let i = 0; i < Object.keys(marks).length; i++) {
+            console.log("The marks of " + Object.keys(marks)[i] + " are " + marks[Object.keys(marks)[i]])
+        }
+
+        // in case of objects for in loop is used  to give keys of an object
+        for (let key in marks) {
+            document.write("The marks of " + key + " are " + marks[key] + "  ");
+        }
+    </script>
+</body>
+
+</html>

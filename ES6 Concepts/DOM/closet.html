@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .card {
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .highlight {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2 class="card-title">Card Title</h2>
+        <p class="card-content">This is the content of the card.</p>
+        <button class="btn">Click me</button>
+    </div>
+
+    <script>
+        // const button = document.querySelector('.btn');
+
+        // // Add event listener to the button
+        // button.addEventListener('click', function () {
+        //     // Find the closest ancestor of the button with class "card"
+        //     const closestCard = button.closest('.card');
+
+        //     if (closestCard) {
+        //         closestCard.classList.add('highlight');
+        //     }
+        // });
+
+        const button = document.querySelector('.btn');
+
+        button.addEventListener('click', function () {
+            const closestCard = button.closest('.card');
+
+            if (closestCard) {
+                closestCard.classList.add('highlight');
+            }
+        });
+    </script>
+</body>
+
+</html>

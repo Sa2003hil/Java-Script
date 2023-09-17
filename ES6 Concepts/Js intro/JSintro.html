@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 1. Variables and constants
+
+        var dulha = "Rahul";
+        var dulhan = "kajal";
+        // if the variables are declared with var keyword then they can be redeclared
+
+
+        const dulha1 = "Rahul";
+        const dulhan1 = "Kajal";
+
+        //if the variables are declared with const keyword then they can not be redeclared
+
+        // var dulha = "Sahil";
+
+        // -------------------------------------------------------------------
+
+        // 2. Hoisting: it is a mechanism in javascript where variables and function declarations are moved to the top of their scope before the code execution
+
+        /* 
+        if do hoisting then  
+
+        console.log(a);  yhaan humne a ko declare nahi kiy ahai but fir bhi hume error nahi aayega balki undefined aayega
+        var a = 12;
+
+        it is divided into two parts declaration and definition
+
+        console.log(a);
+        var a;
+        a = 12;
+        
+
+        after that the declaration is moved to top of the code
+
+        var a ;
+        .
+        .
+        .
+        .
+        console.log(a);
+        a = 12;
+
+        thats why we get undefined not error in the console
+
+
+
+        important point : if we are using let keyword then we will get error in the console
+        
+        
+        */
+
+        console.log(a);
+        var a = 12;
+
+        // ------------------------------------------------------------------
+
+
+        /*
+        3. Types in js
+    
+        Primitive -- jis bhi variabel mein brackets na lage ho use hum primitive bolte hai ......var = "adfaf";
+        Refrence - (){}[]
+
+
+        aesi koi bhi value jisko copy karne par real value copy nahi hota, balki us mein value ka refrence paas hojaata hai, use hum refrence value kehte hai, aur jise copy krne pe real copy ho jayye wo primitive type value hoti hai 
+
+        */
+
+        var arr1 = [1, 2, 3];
+        var arr2 = arr1;
+
+        arr2.pop();  // this is the example of refrence type
+
+        // pop is happen in both the arrays so we have not to do this 
+
+
+        // ------------------------------------------------------------------
+        /*
+        
+        4. Functions -- 
+        1. Arguments : real value jo hum dete functions chalate waqt
+        2. parameters:  variables jinme value store hoti hai
+
+        func(parameters){
+            console.log(a);
+        }
+
+        func(arguments);
+        
+        */
+        function abc(a) {
+            console.log(a);
+        }
+
+        abc(12);
+
+
+        // ---------------------------------------------------------
+
+        /*
+        
+        Shift and Unshift
+
+        Unshift -- add element at the start of the array
+        shift -- remove element from the start of the array
+        */
+
+        var arr = [1, 2, 3, 4];
+        arr.shift(0);
+
+        // agar humne arr ke beech mein se koi value ko htana ho to hum splice method ka use karte hai  syntax :arr.splice (index,how many values to remove)
+
+        arr.splice(2, 1);
+
+
+
+        // ----------------------------------------------------------
+
+        /*
+
+        ek se jyada bande ki baat ki to hum usee array bolenge and agr ek bande ke baare mein saari baat ki to hum use object bolenge
+
+        objests : EK bande ki details ko hold karna, in  key:value pair
+
+        like hume ek gadi ki saari info store karni hai to hum uska ek obj createkar denge
+        
+        */
+
+        var ghadi = {
+            name: "Rollex",   // here name is property
+            price: "100k",
+            type: "Digital",
+            color: "Gold",
+            kuchbolo: function abc() {
+                // agar kisi property ki value function ho to hum use METHOD bolte hai
+            }
+        }
+
+
+        // How to acces value ghadi.color ----- gold
+
+        document.write(5 + 6);
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

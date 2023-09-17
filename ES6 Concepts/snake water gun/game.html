@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snake Water Gun Game</title>
+</head>
+
+<body>
+    <h1>Snake Water Gun Game</h1>
+    <p>You are playing Snake Water and Gun game.</p>
+
+    <script>
+        let arr = ['snake', 'water', 'gun'];
+
+        let round = 1;
+        let userGuesses = 0;
+        let computerGuesses = 0;
+
+        function playRound() {
+            if (round <= 3) {
+                let userInput = prompt(`Round ${round}: Enter your guess (snake, water, gun):`).toLowerCase();
+
+                if (!arr.includes(userInput)) {
+                    alert("Invalid input. Please enter 'snake', 'water', or 'gun'.");
+                    playRound(); // Retry the round
+                    return;
+                }
+
+                let computerInput = arr[Math.floor(Math.random() * 3)];
+
+                if (
+                    (userInput === 'snake' && computerInput === 'water') ||
+                    (userInput === 'gun' && computerInput === 'snake') ||
+                    (userInput === 'water' && computerInput === 'gun')
+                ) {
+                    userGuesses++;
+                } else {
+                    computerGuesses++;
+                }
+
+                round++;
+                playRound(); // Move to the next round
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            let result;
+
+            if (computerGuesses > userGuesses) {
+                result = "Oh no! You lose. The computer scored more points.";
+            } else if (computerGuesses < userGuesses) {
+                result = "Congratulations! You win.";
+            } else {
+                result = "It's a tie. Well played!";
+            }
+
+            alert(result);
+        }
+
+        playRound(); // Start the game
+    </script>
+</body>
+
+</html>

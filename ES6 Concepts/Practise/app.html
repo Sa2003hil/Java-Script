@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inventory Management App</title>
+</head>
+
+<body>
+    <h1>Inventory Management App</h1>
+
+    <h2>Add Product</h2>
+    <input type="text" id="productName" placeholder="Product Name">
+    <input type="number" id="productQuantity" placeholder="Quantity">
+    <input type="number" id="productPrice" placeholder="Price">
+    <button id="addProduct">Add Product</button>
+
+
+
+    <!-- <input type="text" id="productName" placeholder="Product Name">
+    <input type="text" id="productQuantity" placeholder="Quantity">
+    <input type="text" id="productPrice" placeholder="Price">
+    <button id="addProduct">Add Product</button> -->
+
+    <h2>Inventory List</h2>
+
+    <ul id="inventoryList"></ul>
+
+    <script>
+        const inventory = [
+            { id: 1, name: 'Product A', quantity: 10, price: 20 },
+            { id: 2, name: 'Product B', quantity: 5, price: 15 },
+            { id: 3, name: 'Product C', quantity: 20, price: 30 },
+            { id: 4, name: 'Product D', quantity: 8, price: 25 },
+        ];
+
+        const inventoryList = document.getElementById('inventoryList');
+        const productNameInput = document.getElementById('productName');
+        const productQuantityInput = document.getElementById('productQuantity');
+        const productPriceInput = document.getElementById('productPrice');
+        const addProductButton = document.getElementById('addProduct');
+
+        function displayInventory(products) {
+            inventoryList.innerHTML = products
+                .map(product => `<li>${product.name} - Quantity: ${product.quantity}, Price: $${product.price}</li>`)
+                .join('');
+        }
+
+        displayInventory(inventory);
+
+        addProductButton.addEventListener('click', () => {
+            const productName = productNameInput.value;
+            const productQuantity = parseInt(productQuantityInput.value);
+            const productPrice = parseFloat(productPriceInput.value);
+
+            if (productName && !isNaN(productQuantity) && !isNaN(productPrice)) {
+                const newProduct = {
+                    id: inventory.length + 1,
+                    name: productName,
+                    quantity: productQuantity,
+                    price: productPrice,
+                };
+
+                inventory.push(newProduct);
+                displayInventory(inventory);
+
+                // Clear input fields
+                productNameInput.value = '';
+                productQuantityInput.value = '';
+                productPriceInput.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

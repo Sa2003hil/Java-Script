@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="script.js">
+
+<body>
+
+    <h1>Let and Var keywords</h1>
+    <p>Var old js mein tha </br>let and const new js mein hai (ES6)</p>
+
+    <script>
+
+
+        // case 1: if we are making our variable with var then in that case the scope of the variable becomes global
+        // means var function scoped hota hai hum use apne parent fucntion mein kabhi bhi use kar sakte hai
+        var ab = 20;
+        if (true) {
+            var ab = 20;
+            console.warn(ab);
+        }
+        console.warn(ab);
+
+
+        // here the output will be 20 20 because the scope of the variable is global
+
+        function abcd() {
+            for (var i = 1; i < 12; i++) {
+                console.log(i);
+            }
+            console.log(i);
+        }
+        abcd();
+
+
+
+        function abc() {
+            for (let i = 1; i < 12; i++) {
+                console.log(i);
+            }
+            console.log(i);
+        }
+        abc();
+        // here output will be 1 2 3 4 5 6 7 8 9 10 11 
+
+
+
+        //case 2: if we are making our varibale with let then the scope becomes block level
+
+        let bb = 10;
+        if (true) {
+            let bb = 20;
+            console.warn(ab);
+        }
+        console.warn(bb);
+        // use of using let is that if we want to use the same variable name in different blocks then we can use let
+        // here the output will be 20 10 because the scope of the variable is block level
+
+
+
+    </script>
+
+</body>
+
+</html>
