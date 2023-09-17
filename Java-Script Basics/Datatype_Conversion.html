@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Type Consversion</title>
+</head>
+
+<body>
+    <h1>Data-type conversions </h1>
+
+    <script>
+        let score1 = "22"   // this is string 
+        let change = Number(score1) // change string into number 
+        console.log(typeof (change))  // typeof is used to find the data type 
+
+
+        // How to change datatype in js ?
+
+        let soc = "sss22"
+        let changeToNumber = Number(soc)
+        console.log(changeToNumber)  // This will give NaN (Not a Number)
+        console.log(typeof (changeToNumber)) // but this will convert this NaN to Number which is orignally not a number 
+
+
+        // Values for Undefined 
+        let und = undefined;
+        console.log(typeof und)
+        console.log(und)
+
+        let changeto = Number(und);
+        console.log(typeof changeto)
+        console.log(changeto)
+
+
+
+        // Values for Null
+        let nl = null;
+        console.log(typeof nl)
+        console.log(nl)
+
+        let changetonl = Number(nl);
+        console.log(typeof changetonl)
+        console.log(changeton)
+
+
+        /*
+        Notes :
+
+        33 => 33
+        "ss33" => NaN
+        true => 1 ; false => 0
+        null => 0
+        undefined => NaN
+
+        
+        */
+
+
+    </script>
+
+</body>
+
+</html>
