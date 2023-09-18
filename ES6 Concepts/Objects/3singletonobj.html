@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const tinderUser = new Object() // this is singleton object 
+        console.log(tinderUser)  // output : {}
+
+
+        const tinderUser2 = {}  // this is non singleton object
+        console.log(tinderUser2) // output : {}
+
+
+        tinderUser2.email = "abc@gmail.com"
+        tinderUser2.name = "John"
+        tinderUser2.age = 25
+
+        console.log(tinderUser2) // output : {email: "abc@gmail", name: "John", age: 25}
+
+
+        // nesting of objects
+
+        const regularUser = {
+            email: "ambani@reliance.com",
+            fullName: {
+                userFullname: {
+                    firstName: "Mukesh",
+                    lastname: "Ambani"
+                }
+            }
+
+        }
+
+        console.log(regularUser) // output : {email: "ambani@reliance", fullName: {…}}
+
+
+        // this is how accessing of nested objects is done
+        console.log(regularUser.fullName.userFullname.firstName) // output : Mukesh
+        console.log(regularUser.fullName.userFullname.lastname) // output : Ambani
+
+
+
+
+        // How to concatenate two objects
+
+        const obj1 = { 1: "a", 2: "b" }
+        const obj2 = { 3: "c", 4: "d" }
+
+        // if we do 
+        const obj4 = { obj1, obj2 }
+        console.log(obj4) // in this case output obj4 = {obj1 = { ...},obj2 = {...} }  
+
+        // method 1 : using Assign method 
+        const obj3 = Object.assign({}, obj1, obj2)
+        console.log(obj3)
+
+
+        // method 2 : using spread operator
+        const obj5 = { ...obj1, ...obj2 }
+        console.log(obj5)
+
+
+    </script>
+
+</body>
+
+</html>
