@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const mySmbl = Symbol("mySmbl") // Symbol is a primitive data type in javascript
+
+        const JsUser = {
+            name: "John",
+            "full name": "Sahil Dhiman",  // to access this ---> JsUser["full name"], we have to use square bracket notation because we can't use dot notation to access this
+
+            mySmbl: "mySmbl", // this is treated as string to make it of symbol datatype we have to do this as follows
+            [mySmbl]: "this is my symbol",
+            age: 25,
+            email: "John@chatgpt.com",
+            isLogedin: false
+        }
+
+        // methods to access the object properties
+
+        // 1. Dot Notation
+        console.log(JsUser.email)
+
+        // 2. square bracket notation
+        console.log(JsUser["email"])
+
+
+        // Interview question how to use symbol as key in a object and print it
+        console.log(JsUser[mySmbl])
+
+
+
+    </script>
+
+</body>
+
+</html>
