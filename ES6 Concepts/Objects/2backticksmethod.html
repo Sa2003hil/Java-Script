@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const JsUser = {
+            name: "John",
+            "full name": "Sahil Dhiman",
+            age: 25,
+            email: "abc@gmail.com"
+        }
+
+        JsUser.greeting = function () {
+            console.log("hello js users")
+        }
+
+        JsUser.greetingtwo = function () {
+            console.log(`Hello user , ${this.name}`)  // this keyword is used to access the object properties
+        }
+
+        console.log(JsUser.greeting())
+        console.log(JsUser.greetingtwo())
+    </script>
+
+</body>
+
+</html>
