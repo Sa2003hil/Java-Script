@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const course = {
+            name: "js in hindi",
+            price: "999",
+            instructor: "sahil"
+        }
+        // simple way to access the object
+
+        // course.name
+
+        // This is how we can access using destructring
+        const { instructor } = course
+        console.log(instructor)
+
+
+        // we can also change the name of the property while destructring
+        const { price: pri } = course
+        console.log(pri)
+
+
+        // while making website in react we use destructring a lot like in making navbar
+
+        // const navbar1 = (props.company)=> { // without destructring we have to use props to access the property
+
+        // }
+        const navbar = ({ company }) => {
+
+        }
+
+        navbar(company = "codewithsahil")
+
+    </script>
+
+</body>
+
+</html>
