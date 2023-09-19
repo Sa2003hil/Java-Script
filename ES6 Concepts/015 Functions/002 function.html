@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function loginusername(username) {
+            // here we can use if statement to verify wheather it is undefined or not but we can also use default parameter
+
+            if (username === undefined || !username) {
+                console.log("please enter a username")
+                return
+            }
+            return `${username} just logged in`
+        }
+
+        // console.log(loginusername("sahil"))
+        console.log(loginusername()) // if we dont pass any argument then it will return undefined 
+
+
+        // we can also use the default parameter
+        function logingintoacc(usernamee = "sukhpreet") {
+
+            if (!usernamee) {
+                console.log("please enter a username")
+                return
+            }
+            return ` ${usernamee} just logged in`
+        }
+
+        console.log(logingintoacc())  
+    </script>
+</body>
+
+</html>

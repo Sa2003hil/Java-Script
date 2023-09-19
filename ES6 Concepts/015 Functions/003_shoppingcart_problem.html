@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart problem using function</title>
+</head>
+
+<body>
+    <script>
+
+        // In shopping cart user add items to the cart program doesn't know that how many items user will add to the cart in terms of programmig --> functions we don't know that how many arguments user will pass to the function
+
+        // To solve this problem we can use rest operator
+
+        function CalculatePrice(...num1) {
+            return num1
+        }
+        console.log(CalculatePrice(1, 2, 3, 4, 5))
+    </script>
+</body>
+
+</html>

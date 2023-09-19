@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object and arrays in case of functions </title>
+</head>
+
+<body>
+
+    <h2>object and arrays in case of functions</h2>
+    <script>
+        // passing objects in functions 
+        const user = {
+            username: "sahil",
+            price: 199
+        }
+
+        function handleObject(anyObjet) {
+            console.log(`Username is ${anyObjet.username} and price is ${anyObjet.price}`)
+        }
+
+        handleObject(user)
+
+        // we can also directly pass the object into the function
+        handleObject({
+            username: "Sam",
+            price: 1000
+        })
+
+
+
+        // passing of array in function
+        const newarr = [100, 200, 300, 400]
+
+        function returnsecondvalue(getarray) {
+            return getarray[1]
+        }
+
+
+        console.log(returnsecondvalue(newarr))
+    </script>
+
+</body>
+
+</html>
