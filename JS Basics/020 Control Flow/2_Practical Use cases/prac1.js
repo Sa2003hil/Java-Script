@@ -4,6 +4,8 @@ const hasDebitCard = true
 const LoggedInfromGoogle = false
 const LoggedInfromEmail = true
 
+
+// multiple condition checking
 if (isLoggedin && hasDebitCard) {
     console.log("Allow for shopping")
 }
