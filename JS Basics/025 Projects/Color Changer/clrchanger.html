@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer | js project</title>
+</head>
+<style>
+    body {
+
+        /* list-style: none; */
+        /* text-decoration: none; */
+        padding: 200px;
+        /* display: flex; */
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .btn {
+        border: 1.3px solid black;
+    }
+
+    #red {
+        background-color: red;
+        padding: 30px;
+        margin: 8px;
+    }
+
+    #blue {
+        background-color: blue;
+        padding: 30px;
+        margin: 8px;
+    }
+
+    #green {
+        background-color: green;
+        padding: 30px;
+        margin: 8px;
+    }
+
+    #yellow {
+        background-color: yellow;
+        padding: 30px;
+        margin: 8px;
+    }
+</style>
+
+<body>
+    <h1>Backgorund Color Changer</h1>
+    <div style="display: flex;">
+
+        <span class="button" id="red"></span>
+        <span class="button" id="blue"></span>
+        <span class="button" id="green"></span>
+        <span class="button" id="yellow"></span>
+    </div>
+
+</body>
+<script>
+    const buttons = document.querySelectorAll('.button')
+    // console.log(buttons)
+    const body = document.querySelector('body')
+
+    buttons.forEach(function (button) {
+        console.log(button)
+
+        button.addEventListener('click', function (e) {
+            console.log(e)
+            console.log(e.target)
+
+            // using if else statements
+
+            // if (e.target.id === 'red') {
+            //     body.style.backgroundColor = e.target.id
+            // }
+            // if (e.target.id === 'blue') {
+            //     body.style.backgroundColor = e.target.id
+            // }
+            // if (e.target.id === 'green') {
+            //     body.style.backgroundColor = e.target.id
+            // }
+            // if (e.target.id === 'yellow') {
+            //     body.style.backgroundColor = e.target.id
+            // }
+
+            switch (e.target.id) {
+                case 'red':
+                    body.style.backgroundColor = e.target.id
+                    break;
+                case 'blue':
+                    body.style.backgroundColor = e.target.id
+                    break;
+                case 'green':
+                    body.style.backgroundColor = e.target.id
+                    break;
+                case 'yellow':
+                    body.style.backgroundColor = e.target.id
+                    break;
+
+                default:
+                    break;
+            }
+        });
+
+    });
+
+
+
+
+
+</script>
+
+</html>
