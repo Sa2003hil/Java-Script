@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body style="background-color: #212121;color: white;">
+   0 UNSENT Client has been created. open() not called yet.<br />
+   1 OPENED open() has been called.<br />
+   2 HEADERS_RECEIVED send() has been called, and headers and status are available.<br />
+   3 LOADING Downloading; responseText holds partial data.<br />
+   4 DONE The operation is complete.
+</body>
+<script>
+   /*
+   API stands for Application Programming Interface. An API is a software intermediary that allows two applications to talk to each other. In other words, an API is the messenger that delivers your request to the provider that you're requesting it from and then delivers the response back to you.
+   
+   
+   we can make api's readable using a site : json Formatter  
+   
+   *********  Important  Points  ***********
+   
+   
+   
+   *>  XMLHttpRequest Object:  in short (XHR)
+   
+   *> The XHR object is used to exchange data with a webserver behind the scene
+      this means that it is possible to updates parts of webpage,without reloading the whole web page
+   
+   *>  The XMLHttpRequest Object is the key to AJAX
+   
+   *>  XHR is an API can be used by javaScript to transfer and manipulate XML data to and from a webserver using HTTP , by establishing an independent connection channel between a web Client side and Server Side
+   
+
+
+
+   Steps :
+
+   1. Create an XHR object
+   2. Open a connection (GET,POST,PUT,DELETE)  --- xhr.open('GET', requestUrl, true)
+   3. onreadystatechange  --- xhr.onreadystatechange = function () {}   this is used to check the state of the XMLHttprequest (0 to 4) 
+   4. send the request  --- xhr.send()
+
+   These are the 4 steps to make an API request using XHR object
+   */
+
+
+
+
+   const requestUrl = 'https://randomuser.me/api/'
+   const xhr = new XMLHttpRequest();
+   xhr.open('GET', requestUrl, true)
+   xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (this.readyState === 4 && this.status === 200) {
+         console.log(this.responseText)
+
+         // const data = this.responseText  // this will give us a string to change it into object we use JSON.parse()
+         const data = JSON.parse(this.responseText)
+         console.log(typeof data);
+         console.log(data.results[0].name);
+      }
+   }
+   xhr.send();
+</script>
+
+</html>

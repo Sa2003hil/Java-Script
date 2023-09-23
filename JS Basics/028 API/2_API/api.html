@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<style>
+    body {
+        background-color: bl;
+    }
+
+    h2 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+    }
+
+    .btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+
+    .pri-btn {
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        width: 100px;
+
+    }
+
+    .sec-btn {
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        width: 100px;
+    }
+
+    .pri-btn:hover {
+        background-color: #7f7c7c;
+        color: #000;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .sec-btn:hover {
+        background-color: #7f7c7c;
+        color: #000;
+        transition: all 0.3s ease-in-out;
+    }
+</style>
+
+<body>
+
+    <h2>API | JavaScript</h2>
+
+    <div class="btns">
+        <button class="pri-btn">
+            start
+        </button>
+        <button class="sec-btn">
+            stop
+        </button>
+    </div>
+
+    <p>Open the console to see the results</p>
+
+    <div id="demo"></div>
+
+
+    <div class="content">
+
+
+    </div>
+
+
+
+</body>
+
+
+
+<script>
+    var xhttp = new XMLHttpRequest();
+
+    // Function to handle the response
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+        }
+    };
+
+    // Function to send an XMLHttpRequest when the "start" button is clicked
+    function startRequest() {
+        xhttp.open("GET", "https://randomuser.me/api/", true);
+        xhttp.send();
+    }
+
+    // Add a click event listener to the "start" button
+    document.querySelector(".pri-btn").addEventListener("click", startRequest);
+
+    // You can do something similar for the "stop" button if needed.
+</script>
+
+
+
+</html>

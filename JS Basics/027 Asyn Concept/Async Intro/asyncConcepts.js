@@ -29,4 +29,19 @@ Non Blocking code:
 but jaise ek user ka data aaya aur humein us data ko database mein store karna hai and uske baad user ko notification dena hai ki "Registration Successful" 
 
 and we know that database is also a file (where we read and write data) so according to the non blocking code  user ko pehle hi message chala jayega ki "Registration Successful" jab tak file read ho rahi hogi but ho skta hai ki jab file read ho rhi ho to usmein koi error aa gyi ho... but user ko message chala jayega ki "Registration Successful" and user ko pta bhi nahi chalega ki uska data store hua bhi ya nahi hua so hum keh skte hai ki koi bhi acha yaa bura nahi hai... it depends on the situation use case  ki humein kya karna hai 
-*/ 
+*/
+
+// Synchronous code : one by one execute hoga
+console.log('this is synchronous code')
+console.log("enter your name");
+console.log("enter your age");
+
+
+// Asynchronous code 
+console.log('I am first')
+
+setTimeout(() => {
+      console.log("I am inside the settimeout function");
+}, 1000);
+
+console.log('I am last')
