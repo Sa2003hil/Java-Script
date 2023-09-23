@@ -85,7 +85,7 @@
                 e.preventDefault();
                 const guess = parseInt(userInput.value);
                 console.log(guess);
-                validateGuess(guess);
+                validateGuess(guess);  // pass the value to the validate function
             });
         }
 
@@ -114,7 +114,7 @@
 
         function checkGuess(guess) {
             if (guess === randomNumber) {
-                displayMessage('You guessed it right!');
+                displayMessage(`You guessed it right! ${randomNumber}`);
                 endGame();
             } else if (guess < randomNumber) {
                 displayMessage('Number is too Low');
