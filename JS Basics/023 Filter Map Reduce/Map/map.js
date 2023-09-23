@@ -23,7 +23,7 @@ const newarr3 = arr3.forEach((elem) => {
 console.log(newarr3)
 
 
-// Chaining : in js is used to call multiple methods on the same array
+// Chaining : in js chaining is used to call multiple methods on the same array
 
 const arr4 = [1, 2, 3, 4, 5, 6]
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settimeout | Async Function</title>
+</head>
+
+<style>
+    h1 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+    }
+
+
+    .first-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #btn {
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        width: 100px;
+    }
+
+    #btn:hover {
+        background-color: #7f7c7c;
+        color: #000;
+        transition: all 0.5s ease-in-out;
+    }
+
+    #discount {
+        background-color: black;
+        padding: 7px;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+
+    .dis-cont {
+        font-weight: 700;
+        color: rgb(161, 78, 220);
+    }
+</style>
+
+<body>
+    <div id="discount">
+        <span class="dis-cont">Discount Offer &#127881 </span> &nbsp; 50% off on every course : Full Stack Development
+    </div>
+    <h1>This is best course | CodeWithSahil</h1>
+
+    <div class="first-div">
+        <button id="btn">click</button>
+    </div>
+    <script>
+        /*
+
+        Settimeout:- is a async function which is used to delay the execution of a function for a given time. 
+
+        sytax: setTimeout(function, time in ms)
+
+        
+        * Here function can be a arrow function or an anonymous function.
+
+
+        Settimeinterval:- is a async function which is used display a function regularly after a given time.
+
+        syntax : setInterval(function, time in ms)
+
+
+          setTimeout(() => {
+            console.log('started..')
+        }, 3000);
+
+
+
+        setInterval(() => {
+            console.log('started..')
+        }, 1000);
+
+        */
+
+
+        // setTimeout() is a javascript function used to execute a given code after a particular time or delay provided by the user 
+
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = 'Javascript Course | CodeWithSahil'
+        }
+        const changeMe = setTimeout(changeText, 2000)
+
+
+        // clearTimeout() javascript function as name suggest, used to stop the function setTimeout() from being executed
+
+        document.querySelector('#btn').addEventListener('click', function () {
+            clearTimeout(changeMe)
+            console.log("STOPPED")
+        })
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

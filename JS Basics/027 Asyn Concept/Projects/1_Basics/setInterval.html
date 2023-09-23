@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeInterval</title>
+</head>
+
+<style>
+    #nav-div {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #stop-btn {
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        width: 100px;
+    }
+
+    #start-btn:hover {
+        background-color: #7f7c7c;
+        color: #000;
+        transition: all 0.2s ease-in-out;
+    }
+
+    #stop-btn:hover {
+        background-color: #7f7c7c;
+        color: #000;
+        transition: all 0.3s ease-in-out;
+    }
+</style>
+
+<body>
+
+    <h1>Set Time Interval</h1>
+
+    <div class="nav-div">
+        <button id="stop-btn">Stop</button>
+    </div>
+
+
+</body>
+
+<script>
+
+
+    // set time interval
+    const changeme = setInterval(() => {
+        console.log('started')
+    }, 1000);
+
+
+
+    // cleat time interval
+    document.getElementById('stop-btn').addEventListener('click', function () {
+        clearInterval(changeme)
+        console.log("stopped")
+    })
+</script>
+
+</html>
