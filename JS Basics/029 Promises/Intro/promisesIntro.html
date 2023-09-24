@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    /*
+A promise is a promise of code execution,the code either executes successfully or fails in both the user get notified.
+
+syntax :-
+---------
+let promise = new Promise(function(resolve, reject) {
+         // executor (the producing code, "singer")
+});
+
+
+There are three states of a promise:-
+-------------------------------------
+1. Pending:- initial state, neither fulfilled nor rejected.
+2. Fulfilled:- meaning that the operation was completed successfully.
+3. Rejected:- meaning that the operation failed.
+
+
+*/
+
+    // syntax of creating a promise
+    let promise = new Promise(function (resolve, reject) {
+
+        const isBoarded = true;
+        if (isBoarded) {
+            resolve("Boarded");
+        }
+        else {
+            reject("Not Boarded");
+        }
+    })
+
+
+    /*
+
+    
+    .then :- is used to handle the success case of a promise
+    .catch :- is used to handle the failure case of a promise
+    .finally :- is used to handle the final case of a promise it will execute in both the cases whether the promise is fulfilled or rejected
+
+    */
+
+
+    // syntax of consuming a promise
+    promise
+        .then((data) => {
+            console.log('wohoo !', data);
+        })
+        .catch((data) => {
+            console.log('oh! no', data);
+        })
+        .finally(() => {
+            console.log('finally');
+        })
+
+
+
+</script>
+
+</html>

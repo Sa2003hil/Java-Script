@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>CallBack Functions</h2>
+
+    <!-- 
+        CallBack Function is a function which is passed as an argument to another function and is executed after some operation is completed
+        
+        Revise form here:- https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/JS_Chapterwise_Notes.pdf     (Page 49)
+
+
+        In this code we learn about 
+        1. How to create a callback function
+        2. How to pass a callback function as an argument to another function
+        3. How to execute a callback function inside another function
+        4. How to handle errors in callback functions
+        
+    . -->
+
+
+</body>
+<script>
+    function loadScript(src, callback) {
+        var script = document.createElement("script");
+        script.src = src;
+        script.onload = function () {
+            console.log("Loaded script with SRC: " + src)
+            callback(null, src);
+        }
+        script.onerror = function () {
+            console.log("Error loading script with SRC: " + src);
+            callback(new Error("Src got some error"))
+        }
+        document.body.appendChild(script);
+    }
+
+
+    // Error handling in callback functions
+    function hello(error, src) {
+        if (error) {
+            console.log(error)
+            return
+        }
+        alert('Hello World!' + src);
+    }
+
+
+    function goodmorning(error, src) {
+
+        if (error) {
+            console.log(error)
+            sendEmergencyMessageToCeo();
+            return
+        }
+        alert('Good morning' + src);
+    }
+
+    // without errors goodmorning will be called
+    loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js", goodmorning)
+
+    // with errors hello will be called
+    // loadScript("https://cdn.jsdelsdfivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js", hello) 
+</script>
+
+</html>
