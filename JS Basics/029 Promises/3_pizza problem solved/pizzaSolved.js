@@ -35,6 +35,14 @@ function bakePizza(dough) {
 }
 
 
+// Method 1:  These then and catch methods are old methods of promises we can also do the same thing using async await functions
+/*
+
+.then :- is used to handle the success case of a promise
+.catch :- is used to handle the failure case of a promise
+.finally :- is used to handle the final case of a promise it will execute in    both the cases whether the promise is fulfilled or rejected
+
+*/
 
 
 getCheese()
@@ -57,3 +65,46 @@ getCheese()
     .finally(() => {
         console.log('Process Ended !');
     })
+
+
+// Method 2: this can also be done using async await functions
+
+/*
+Imp Points :-
+
+async function is used to make a function asynchronous. It means a function will return a promise and we can use await keyword to wait for the promise to resolve or reject. 
+
+await keyword is used to wait for a promise to resolve or reject. It can only be used inside an async function.
+
+
+*>  For error handling in async ans await functions we can use try catch block
+
+like this :-
+
+
+async function name() {
+    try {
+        here we can write our code
+    } catch (error) {
+        console.log("Error Occured", error);
+    }
+}
+
+
+*/
+
+async function orderPizza() {
+    try {
+        const cheese = await getCheese();
+        console.log("Here is the cheese", cheese);
+        const dough = await makeDough(cheese);
+        console.log("Here is the Dough", dough);
+        const pizza = await bakePizza(dough);
+        console.log('Here is the pizza', pizza);
+    } catch (error) {
+        console.log("Error Occured", error);
+    }
+}
+
+orderPizza();
+

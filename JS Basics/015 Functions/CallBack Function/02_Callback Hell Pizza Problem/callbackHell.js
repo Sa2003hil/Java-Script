@@ -58,4 +58,4 @@ getCheese((cheese) => {
 
 // pizza -> dough -> cheese
 
-// this can be solved by promises (pizza problem solved by promises.js in promises folder)
+// this can be solved by promises (pizza problem solved in promises folder)
