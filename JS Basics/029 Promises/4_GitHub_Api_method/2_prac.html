@@ -82,27 +82,53 @@
 
 </body>
 <script>
-    const start = document.querySelector('.pri-btn')
-    const stop = document.querySelector('.sec-btn')
 
-    async function startRequest() {
-        try {
-            const response = await fetch('https://api.github.com/users/Sa2003hil')
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}}`)
-            }
-            const data = await response.json()
-            console.log(typeof data);
-            document.getElementById('avatar').src = data.avatar_url;
-            document.querySelector('.user').innerHTML = `UserName :${data.login}`
-        } catch (error) {
-            console.log('E: ', error);
-        }
+    // Using then catch method
+
+
+    function startRequest() {
+        fetch('https://api.github.com/users/Sa2003hil')
+            .then((resp) => {
+                console.log(resp);
+                return resp.json()
+            })
+            .then((data) => {
+                console.log(data);
+                document.getElementById('avatar').src = data.avatar_url;
+                document.querySelector('.user').innerHTML = `UserName : ${data.login}`
+            })
+            .catch((error) => {
+                console.log('E:', error);
+            })
+            .finally(() => {
+                console.log('data fetched successfully');
+            })
+
     }
-
     function stopRequest() {
-        console.log('Request aborted');
+        console.log('Request Aborted');
     }
+
+    // using async try catch method
+
+    // async function startRequest() {
+    //     try {
+    //         const response = await fetch('https://api.github.com/users/Sa2003hil')
+    //         if (!response.ok) {
+    //             throw new Error(`HTTP error! status: ${response.status}}`)
+    //         }
+    //         const data = await response.json()
+    //         console.log(typeof data);
+    //         document.getElementById('avatar').src = data.avatar_url;
+    //         document.querySelector('.user').innerHTML = `UserName :${data.login}`
+    //     } catch (error) {
+    //         console.log('E: ', error);
+    //     }
+    // }
+
+    // function stopRequest() {
+    //     console.log('Request aborted');
+    // }
 
 
 </script>
