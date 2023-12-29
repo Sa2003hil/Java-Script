@@ -1,3 +1,29 @@
 what is the main difference between ECMA , JavaScript , NodeJs and BunJs ?
 
-ECMA is a scripting language on which JavaScript is based, JavaScript is a language, NodeJs is a runtime environment, and BunJs is a framework.
+ECMA is a scripting language on which JavaScript is based, 
+ * JavaScript is a language, 
+ * NodeJs is a runtime environment, (something that can run/compile JavaScript code)
+ * BunJs is a framework. (written in zig language)
+
+
+-> Common Js Browser Engine
+1. V8 (Chrome/Chromium) written in C++
+2. SpiderMonkey (Firefox) written in C++ and Rust
+
+
+Remote Procedure Call (RPC) :-
+It is a protocol that one program can use to request a service from a program located on another computer in a network. It allows programs to execute procedures or functions on a remote server as if they were local, abstracting the underlying communication details.
+
+HTTP(client side)
+
+
+HTTP(server side)
+1. Response Headers
+2. Response Body
+3. Status Code
+
+
+# Things that happen when you type a URL in the browser and press enter
+1. Browser Parser the URL
+2. Does a DNS(Domain Name Service) lookup to find the IP address of the server(convert domain name to IP address)
+3. Establish a connection to the IP(does Handshake)
