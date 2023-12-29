@@ -1,0 +1,3 @@
+what is the main difference between ECMA , JavaScript , NodeJs and BunJs ?
+
+ECMA is a scripting language on which JavaScript is based, JavaScript is a language, NodeJs is a runtime environment, and BunJs is a framework.
