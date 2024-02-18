@@ -1,0 +1,2 @@
+
+            let result = fun(n);

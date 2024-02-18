@@ -22,8 +22,18 @@ HTTP(server side)
 2. Response Body
 3. Status Code
 
+------------------------------------------------------------------------------------------
 
 # Things that happen when you type a URL in the browser and press enter
 1. Browser Parser the URL
 2. Does a DNS(Domain Name Service) lookup to find the IP address of the server(convert domain name to IP address)
 3. Establish a connection to the IP(does Handshake)
+
+
+------------------------------------------------------------------------------------------
+# what is the differnce between public and private IP address ?
+
+Private IP : It is the IP address that is assigned to a device within your local network. Multiple devices within different local networks (for example, different homes or businesses) can have the same private IP address since these addresses are not globally unique.
+
+
+Public IP : It is the IP address that is assigned to a device that is connected to the internet.
